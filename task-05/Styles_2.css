@@ -1,0 +1,139 @@
+.banner{
+	height:100vh;
+	background-image: url('assets/2bg.png');
+	background-position: center;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    opacity: 0.95;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+.container{
+	background-color:#f0f0f0;
+}
+
+.container img{
+	position: absolute;
+	top: 5px;
+	left: 20px;
+    height: 70px;
+    width: 60px;
+}
+
+.container2 img{
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	top: 20px;
+	left: 1500px
+}	
+
+.container6 img{
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	top: 20px;
+	left: 1600px
+}	
+
+.container7 img{
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	top: 20px;
+	left: 1700px
+}	
+
+.container8 img{
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	top: 20px;
+	left: 1800px
+}	
+
+.container10 img{
+	position: absolute;
+	width: 1920px;
+	height: 80px;
+	top: 0px;
+	left: 0px;
+}	
+
+
+
+.grid-container111 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(3, 1fr); 
+    grid-gap: 20px;
+    position: absolute;
+    top: 110px;
+    left: 520px;
+}
+
+.grid-item{
+    background:linear-gradient(
+        to bottom,
+        #0B0B21 0%,
+        #0B0B21 95%,
+        #4616ab 95%,
+        #4616ab 100%
+    );
+    padding-top: -10px;
+    text-align: center;
+    top: 50px;
+    left: 100px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.grid-item1{
+    background:linear-gradient(
+        to bottom,
+        #0B0B21 0%,
+        #0B0B21 95%,
+        #4616ab 95%,
+        #4616ab 100%
+    );
+    padding-top: -10px;
+    text-align: center;
+    top: 50px;
+    left: 100px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.grid-item1 img{
+    height: 160px;
+    width: 160px;
+    position: relative;
+    top: 10px;
+}
+
+.grid-item img{
+    height: 130px;
+    width: 130px;
+    position: relative;
+    top: 10px;
+}
+
+.grid-item:hover{
+    transform:scale(1.1);
+}
+
+.grid-item1:hover{
+    transform: scale(1.1);
+}
