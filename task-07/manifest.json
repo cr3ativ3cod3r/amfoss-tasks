@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Weather Forecast",
+  "description": "Helps you to find weather",
+  "version": "1.0",
+  "action": {
+    "default_popup": "extension.html",
+    "default_icon": "icon.png"
+  }
+}
+
