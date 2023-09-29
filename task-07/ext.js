@@ -2,6 +2,8 @@ var city=document.querySelector('#city-in')
 var submitButton = document.querySelector('#sub')
 var temp=document.querySelector('#temperature')
 var climate=document.querySelector('#climate')
+var place=document.querySelector('#city')
+
 
 
 
@@ -15,12 +17,13 @@ apik = "89903746d62e6d60bf2ca2b1676ec92c"
     .then(data =>
         {
             console.log(data)
-            var citydata=city
+            var citydata=data['name']
             var climatedata=data['weather']['0']['main']
             var tempdata=(data['main']['temp']-273).toFixed(2)
-            city.innerHTML=citydata
+            place.innerHTML=citydata
             climate.innerHTML=climatedata
             temp.innerHTML=tempdata
+            
         })
 
     .catch(error => 
