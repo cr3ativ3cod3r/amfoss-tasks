@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QWidget, QLabel, QLineEdit, QPushButton ,QDialog, 
 from PySide6.QtGui import QPixmap, QPalette
 import os
 import requests
+import time
 
 
 class SearchWindow(QWidget):
@@ -48,7 +49,7 @@ class SearchWindow(QWidget):
 
         enter_button = QPushButton("Search", self)
         enter_button.setGeometry(50, 300, 160, 43)
-        enter_button.clicked.connect(self.abc)
+        enter_button.clicked.connect(self.pokemon_search)
         
         capture_button = QPushButton("Capture", self)
         capture_button.setGeometry(50, 350, 160, 43)
@@ -60,36 +61,36 @@ class SearchWindow(QWidget):
         display_button.clicked.connect(self.disp)
         
         
-        self.label2 = QLabel(self)
-        self.label2.setGeometry(500, 280, 160, 43)
+        self.Name = QLabel(self)
+        self.Name.setGeometry(500, 280, 160, 43)
 
-        self.label3 = QLabel(self)
-        self.label3.setGeometry(500, 320, 160, 43)
+        self.Type = QLabel(self)
+        self.Type.setGeometry(500, 320, 160, 43)
 
-        self.label4 = QLabel(self)
-        self.label4.setGeometry(500, 340, 160, 43)
+        self.hp = QLabel(self)
+        self.hp.setGeometry(500, 340, 160, 43)
 
-        self.label5 = QLabel(self)
-        self.label5.setGeometry(500, 360, 160, 43)
+        self.attack = QLabel(self)
+        self.attack.setGeometry(500, 360, 160, 43)
 
-        self.label6 = QLabel(self)
-        self.label6.setGeometry(500, 380, 160, 43)
+        self.defense = QLabel(self)
+        self.defense.setGeometry(500, 380, 160, 43)
 
-        self.label7 = QLabel(self)
-        self.label7.setGeometry(500, 400, 160, 43)
+        self.special_attack = QLabel(self)
+        self.special_attack.setGeometry(500, 400, 160, 43)
 
-        self.label8 = QLabel(self)
-        self.label8.setGeometry(500, 420, 160, 43)
+        self.special_defense = QLabel(self)
+        self.special_defense.setGeometry(500, 420, 160, 43)
 
-        self.label9 = QLabel(self)
-        self.label9.setGeometry(500, 440, 160, 43)
+        self.speed = QLabel(self)
+        self.speed.setGeometry(500, 440, 160, 43)
 
-        self.label10 = QLabel(self)
-        self.label10.setGeometry(500, 300, 360, 43)
+        self.ability = QLabel(self)
+        self.ability.setGeometry(500, 300, 360, 43)
 
-        self.label11 = QLabel(self)
-        self.label11.setGeometry(500, 260, 360, 43)
-        self.label11.setStyleSheet("font-size: 20px; color: white; font-family: Georgia")
+        self.pokemon_captured = QLabel(self)
+        self.pokemon_captured.setGeometry(500, 260, 360, 43)
+        self.pokemon_captured.setStyleSheet("font-size: 20px; color: white; font-family: Georgia")
 
         self.image_label=QLabel(self)
         self.image_label.setGeometry(500,70,200,200)
@@ -107,7 +108,7 @@ class SearchWindow(QWidget):
 
     # 1 #
     # Fetch the data from from the API.
-    def abc(self):
+    def pokemon_search(self):
         line_edit=self.textbox.text()
         print(line_edit)
         url=('https://pokeapi.co/api/v2/pokemon/'+line_edit)
@@ -118,8 +119,8 @@ class SearchWindow(QWidget):
         if response.status_code == 200:
 
         
-
-            self.BG = QPixmap('../assets/Poke_bG.jpg')
+            # Add the background provided in assets
+            self.BG = QPixmap('../assets/Poke_BG.jpg')
             self.BG_Palette.setBrush(QPalette.Window,self.BG)
             self.setPalette(self.BG_Palette)
             
@@ -132,64 +133,64 @@ class SearchWindow(QWidget):
             self.image.loadFromData(self.data2)
             self.image_label.setPixmap(self.image)
             self.image_label.setScaledContents(True)
-            #self.image_label.show()
+            
             
             self.name=data['name']
             type=data["types"][0]["type"]["name"]
             
-            ability=data["stats"][0]["stat"]["name"]
-            ability_b=data["stats"][0]["base_stat"]
+            hp_data=data["stats"][0]["stat"]["name"]
+            hp_data_stats=data["stats"][0]["base_stat"]
             
 
-            ability2=data["stats"][1]["stat"]["name"]
-            ability_2b=data["stats"][1]["base_stat"]
+            attack_data=data["stats"][1]["stat"]["name"]
+            attack_data_stats=data["stats"][1]["base_stat"]
 
-            ability3=data["stats"][2]["stat"]["name"]
-            ability_3b=data["stats"][2]["base_stat"]
+            defense_data=data["stats"][2]["stat"]["name"]
+            defense_data_stats=data["stats"][2]["base_stat"]
 
-            ability4=data["stats"][3]["stat"]["name"]
-            ability_4b=data["stats"][3]["base_stat"]
+            specialattack_data=data["stats"][3]["stat"]["name"]
+            specialattack_data_stats=data["stats"][3]["base_stat"]
 
-            ability5=data["stats"][4]["stat"]["name"]
-            ability_5b=data["stats"][4]["base_stat"]
+            specialdefense_data=data["stats"][4]["stat"]["name"]
+            specialdefense_data_stats=data["stats"][4]["base_stat"]
 
-            ability6=data["stats"][5]["stat"]["name"]
-            ability_6b=data["stats"][5]["base_stat"]
+            speed_data=data["stats"][5]["stat"]["name"]
+            speed_data_stats=data["stats"][5]["base_stat"]
 
             
             s=""
             for i in (data["abilities"]):
                 s=s+","+str(i["ability"]["name"])
             
-            
-            self.label2.setText(f"name:{self.name}")
-            self.label3.setText(f"type:{type}")
-            self.label4.setText(f"{ability}:{ability_b}")
-            self.label5.setText(f"{ability2}:{ability_2b}")
-            self.label6.setText(f"{ability3}:{ability_3b}")
-            self.label7.setText(f"{ability4}:{ability_4b}")
-            self.label8.setText(f"{ability5}:{ability_5b}")
-            self.label9.setText(f"{ability6}:{ability_6b}")
-            self.label10.setText(f"ability:{s}")
             # Display the name, official artwork (image), abilities, types and stats when queried with a Pokémon name.
+            self.Name.setText(f"name:{self.name}")
+            self.Type.setText(f"type:{type}")
+            self.hp.setText(f"{hp_data}:{hp_data_stats}")
+            self.attack.setText(f"{attack_data}:{attack_data_stats}")
+            self.defense.setText(f"{defense_data}:{defense_data_stats}")
+            self.special_attack.setText(f"{specialattack_data}:{specialattack_data_stats}")
+            self.special_defense.setText(f"{specialdefense_data}:{specialdefense_data_stats}")
+            self.speed.setText(f"{speed_data}:{speed_data_stats}")
+            self.ability.setText(f"ability:{s}")
+            self.pokemon_captured.clear()
+            
         else:
-            self.label2.setText("POKEMON NOT FOUND")
+            self.name.setText("POKEMON NOT FOUND")
         
-	
+	# 2 #
+    # Capture the Pokémon i.e. download the image.
     def download_image(self):
         save_folder="../store/"
         os.makedirs(save_folder,exist_ok=True)
         save_path = os.path.join(save_folder,f"{self.name}.png")
-        #print(save_path)
         with open(save_path,'wb') as file:
             file.write(self.data2)
-        self.label11.setText("POKEMON CAPTURED")
+        self.pokemon_captured.setText("POKEMON CAPTURED")
     	
 
-    # Add the background provided in assets
+    
 
-    # 2 #
-    # Capture the Pokémon i.e. download the image.
+    
 
     # 3 #
     # Display all the Pokémon captured with their respective names using a new window.
@@ -199,12 +200,12 @@ class SearchWindow(QWidget):
         self.image_files = [os.path.join("../store/", filename) for filename in os.listdir("../store/")]
         self.current_index=0
 
-        #app = QApplication([])
+        
 
         
 
         window = QDialog()
-        window.setWindowTitle("Image Viewer")
+        window.setWindowTitle("Poke-Display")
         window.setGeometry(100, 100, 800, 600)
 
         layout = QVBoxLayout()
@@ -212,13 +213,47 @@ class SearchWindow(QWidget):
         self.image_label_2 = QLabel()
         layout.addWidget(self.image_label_2)
         
+        
+        
         button_layout = QHBoxLayout()
         previous_button = QPushButton("Previous")
         next_button = QPushButton("Next")
 
         previous_button.clicked.connect(self.previous_image)
+        next_button.setStyleSheet("""
+            QPushButton {
+                background-color: dark-grey;
+                color: white;
+                border: 1px solid #BA263E;
+                font: bold 16px;
+                font-family: Georgia;
+                text-align: center;
+                border-radius: 10px;
+            }
+            QPushButton:hover {
+                background-color: #BA263E;
+                color: dark-grey;
+            }
+        """)
+        
         next_button.clicked.connect(self.next_image)
+        previous_button.setStyleSheet("""
+            QPushButton {
+                background-color: dark-grey;
+                color: white;
+                border: 1px solid #BA263E;
+                font: bold 16px;
+                font-family: Georgia;
+                text-align: center;
+                border-radius: 10px;
+            }
+            QPushButton:hover {
+                background-color: #BA263E;
+                color: dark-grey;
+            }
+        """)
 
+        
         button_layout.addWidget(previous_button)
         button_layout.addWidget(next_button)
 
@@ -237,7 +272,7 @@ class SearchWindow(QWidget):
             self.image_label_2.setPixmap(pixmap)
             
             
-            #image_label.setAlignment(Qt.AlignCenter)
+        
         else:
             image_path = self.image_files[0]
             self.current_index=0
