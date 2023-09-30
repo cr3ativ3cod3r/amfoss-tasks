@@ -1,53 +1,53 @@
-# ls
+## ls
 
 Used to list contents of directory
 
-# cat
+## cat
 
 To read the contents of text file
 
-# nano
+## nano
 
 used to create and edit text files
 
-# cp
+## cp
 
 used to copy and paste
 
-# echo <base64 encodedString> | base64
+## echo <base64 encodedString> | base64
 
 To decode a base-64 encode string.
 
-# python3 'file name'
+## python3 'file name'
 
 To execute a python file
 
 
-# git clone
+## git clone
 
 To clone a git repositry
 
-# git branch -a
+## git branch -a
 
 to see all branches
 
-# git checkout
+## git checkout
 
 To change to another branch
 
-# git log
+## git log
 
 to see commit logs
 
-# git add
+## git add
 
 Used to add files to a repositry
 
-# git commit
+## git commit
 
 Commits changes to the repo.Commit logs can be given
 
-#git push
+## git push
 
 pushes the changes to the repo
 
