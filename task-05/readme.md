@@ -1,1 +1,1 @@
-
+I had no prior knowledge in html.So I started to learn one by one.I initially learned how to add a background,create a class and how to style it in css.I linked the css files to respective html files.Then I learned how to add text.I added the social media icons and hyperlinked them to there respective sites using href.Then I hyperlinked the explore shop button and the arrow key to website2.Then I learned how to create grid and added all products to it.I also added an hover effect to the shop items using hover in css.
