@@ -1,0 +1,1 @@
+I read the articles given in the git repo about kernels.I tried installing the requirements as given in git repository.But it failed.I met with some errors.I didn't have enough time to solve them.So I tried to solve errors in main.rs.With less time left I wasn't able to make any improvements.
