@@ -1,0 +1,1 @@
+It was an easy task.I knew most of the commands as I was learning it in my hardware and system essential course.Still I got confused with some commands but all of it was easy to solve.This was a fun tas and took only very less time to complete.
