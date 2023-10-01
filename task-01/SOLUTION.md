@@ -2,6 +2,9 @@
 
 Used to list contents of directory
 
+## cd
+Used to change directory
+
 ## cat
 
 To read the contents of text file
@@ -22,10 +25,17 @@ To decode a base-64 encode string.
 
 To execute a python file
 
+## echo "$(cat file1) $(cat file2)" > file3
+
+To concatenate strings from 2 files and store it in another file
+
+## git auth login
+
+To authenticate with github
 
 ## git clone
 
-To clone a git repositry
+To clone a git repository
 
 ## git branch -a
 
@@ -39,13 +49,13 @@ To change to another branch
 
 to see commit logs
 
-## git add
+## git add .
 
 Used to add files to a repository
 
-## git commit
+## git commit -m"commit message "
 
-Commits changes to the repo.Commit logs can be given
+Commits changes to the repo.Commit messages can be given
 
 ## git push
 
