@@ -1,0 +1,1 @@
+It was an easy task.I knew some basic commands, so they helped initailly.Later on I googled some commands.During code review I found out there was some error in the finalcode.txt.So I did the entire task again.But it took only less time as through the praveshan process I remember most of the commands.
