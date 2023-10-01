@@ -1,43 +1,47 @@
 T=int(input())
+
 def missing(l):
-    c=0
+    x=0
     while True:
-        if c in l:c+=1
-        else:return c
+        if x in l:
+            x+=1
+        else:
+            return x
         
 for i in range (T):
     n=int(input())
     L=list(map(int,input().split()))
-    A=[]
-    B=[]
+    Q=[]
+    P=[]
     M=max(L)
     while L:
         for i in range(M+1):
             if i in L:
                 if L.count(i)==1:
-                    A.append(i)
+                    Q.append(i)
                     L.remove(i)
-                elif L.count(i)==2:
-                    A.append(i)
-                    B.append(i)
+                elif L.count(i)>=2:
+                    Q.append(i)
+                    P.append(i)
                     L.remove(i)
                     L.remove(i)
-                elif L.count(i)>2:
-                    A.append(i)
-                    B.append(i)
                     while i in L:
                         L.remove(i)
                 else:
                     pass
             else:
                 for i in L:
-                    A.append(i)
+                    Q.append(i)
                     while i in L:
                         L.remove(i)
 
     
 
 
-    print(missing(A)+missing(B))
+    print(missing(Q)+missing(P))
+
+    
+
+
         
             
