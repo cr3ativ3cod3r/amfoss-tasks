@@ -21,6 +21,8 @@ Learn web and app development, try out other development fields.
 
 ## How will you contribute back to the club?
 
-I can help others learn.I love teaching and helping others.
+I can help others learn.I love teaching and helping others.I have good communication skills.
 
 I am good at organising events.
+
+
