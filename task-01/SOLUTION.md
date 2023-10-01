@@ -41,7 +41,7 @@ to see commit logs
 
 ## git add
 
-Used to add files to a repositry
+Used to add files to a repository
 
 ## git commit
 
