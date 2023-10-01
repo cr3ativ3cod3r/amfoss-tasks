@@ -1,0 +1,1 @@
+I only solved the first problem.My approach was to check whether the number was dvisible by 3 or 5 and if it was add it to 'a' which was initially given a value of 0.And fnally print 'a'.But this didn't get submitted as time limit exceeded. 
